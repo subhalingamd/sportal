@@ -1,0 +1,66 @@
+
+.icon {
+  display: inline-block;
+  padding: 10px;
+  background: #000;
+  color: white;
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input, textarea, select {
+	min-width: 75%;
+	max-width: 95vw;
+	padding: 7px 6px 8.9px;
+	outline: none;
+	font-size: 0.95em;
+	background-color: #F1F1F1;
+	border-radius: 0;
+}
+
+select {
+	min-width: 100%;
+	max-width: 95vw;	
+}
+
+textarea{
+	resize: none;
+}
+
+select{
+	background: #F1F1F1 url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 100% 50%;
+	-moz-appearance: none; 
+	-webkit-appearance: none; 
+	appearance: none;
+	border-radius: 0;
+	outline: '';
+}
+
+
+
+input:hover, textarea:hover,select:hover,option:hover{
+	outline: 1px solid #000;
+}
+
+input:focus, textarea:focus,select:focus {
+	outline: 1px solid #000;
+	background-color: #000;
+	color: #fff
+}
+
+
+input[type=submit], button{
+	min-width: 40%;
+	max-width: 90vw;
+	padding: 12px 12px;
+	background-color: #f1f1f1;
+	border: 1px solid #000;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+input[type=submit]:hover, button:hover, button:focus{
+	background-color: #000;
+	color: #fff;
+}

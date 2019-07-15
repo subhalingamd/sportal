@@ -1,0 +1,122 @@
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+	font-size: 1.15em;
+}
+
+
+.login{
+	display: block;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+	background-color: #dadada; 
+}
+
+.login-content {
+  background-color: #f1f1f1;
+  margin: 10vh auto 7vw auto;
+  border: 1px solid #888;
+  width: 65vw; 
+  padding: 5vh 2.5vw;
+  text-align: center;
+  box-shadow: 4px 4px 6px #aaa;
+}
+
+
+@media screen and (max-width: 900px){
+	.login-content {
+		margin: 5vh auto 3vw auto;
+		width: 90vw;
+	}
+}
+
+form .box{
+	border: 1px solid #000;
+}
+
+form .box>.h{
+	background-color: #000000;
+	color: White;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	padding: 10px;
+}
+
+form .box>:not(.h){
+	padding: 2vh;
+}
+
+
+.icon {
+  display: inline-block;
+  padding: 10px;
+  background: #000;
+  color: white;
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input {
+	border-radius: 0;
+	width: 75%;	
+	padding: 7px 6px 8.9px;
+	outline: none;
+	font-size: 0.95em;
+	background-color: #F1F1F1;
+}
+
+input:hover{
+	outline: 1px solid #000;
+}
+
+input:focus {
+	outline: 1px solid #000;
+	background-color: #000;
+	color: #fff
+}
+
+
+input[type=submit] {
+	-moz-appearance: none; 
+	-webkit-appearance: none; 
+	appearance: none;
+	min-width: 40%;
+	padding: 12px 12px;
+	background-color: #f1f1f1;
+	border: 1px solid #000;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+input[type=submit]:hover{
+	background-color: #000;
+	color: #fff;
+}
+
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(2)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(2)} 
+  to {transform: scale(1)}
+}
+

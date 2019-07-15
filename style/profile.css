@@ -1,0 +1,149 @@
+
+img.prof-pic-1{
+	height: 70%;
+	width: 100%;
+	background-image: url('prof-pic/default.png');
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+img.prof-pic-1:hover{
+	opacity: 0.5;
+}
+
+
+
+
+.popup{
+	display: none;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0); 
+	background-color: rgba(0,0,0,0.25);
+}
+
+.popup-content {
+  background-color: #f1f1f1;
+  margin: 10vh auto 7vw auto;
+  border: 1px solid #888;
+  width: 65vw; 
+  padding: 5vh 2.5vw;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px){
+	.popup-content {
+		margin: 5vh auto 3vw auto;
+		width: 90vw;
+	}
+}
+
+* .box{
+	border: 1px solid #000;
+}
+
+* .box>.h{
+	background-color: #000000;
+	color: White;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	padding: 10px;
+}
+
+* .box>:not(.h){
+	padding: 2vh;
+}
+
+
+.icon {
+  display: inline-block;
+  padding: 10px;
+  background: #000;
+  color: white;
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input {
+	width: 75%;	
+	padding: 7px 6px 8.9px;
+	outline: none;
+	font-size: 0.95em;
+	background-color: #F1F1F1;
+}
+
+input:hover{
+	outline: 1px solid #000;
+}
+
+input:focus {
+	outline: 1px solid #000;
+	background-color: #000;
+	color: #fff
+}
+
+
+input[type=submit]{
+	min-width: 40%;
+	padding: 12px 12px;
+	background-color: #f1f1f1;
+	border: 1px solid #000;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+input[type=submit]:hover{
+	background-color: Green;
+	color: #fff;
+}
+
+.close{
+	color: #fff;
+	cursor: pointer;
+}
+
+.close:hover, .close:focus {
+  color: ##dadada;
+}
+
+div>.div-desc{
+  display: none;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px;
+  position: absolute;
+  z-index: 10;
+  transform: translate(-50%,0);
+  max-width: 30vw;
+}
+
+div:hover>.div-desc{
+display: inline-block;
+}
+
+
+
+
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
