@@ -9,7 +9,7 @@ This portal is for everyone-***Admin***, ***Faculties*** and ***Students***. *Ad
 ### Assignments
 This is the highlight of this project! All the three groups have some role to play:
 <details>
-	<summary>#### Admin</summary>
+	<summary><b>Admin</b></summary>
 	<p>
 		<ul>
 			<li>Accept/Reject Assignment requests from faculty</li>
@@ -19,7 +19,7 @@ This is the highlight of this project! All the three groups have some role to pl
 	</p>
 </details>
 <details>
-	<summary>#### Faculty</summary>
+	<summary><b>Faculty</b></summary>
 	<p>
 		<ul>
 			<li>Request Assignment for one of his batch (one at a time)</li>
@@ -32,7 +32,7 @@ This is the highlight of this project! All the three groups have some role to pl
 	</p>
 </details>
 <details>
-	<summary>#### Student</summary>
+	<summary><b>Student</b></summary>
 	<p>
 		<ul>
 			<li>Take up an assignment <i>online</i> with timer set in server</li>
@@ -79,10 +79,11 @@ Setting up is easy with our [setup.php](setup.php) file. Enter your DB details, 
 
 ## Demo Instructions
 1. Login as admin using 
-'''
-Username: admin
-Password: admin
-'''
+--- | ---
+Username | admin
+--- | ---
+Password | admin
+--- | ---
 2. Have a look at admin features. Explore them! **You don't have the rights to update password and update contact details for this account**. Similarly, **removing users** is disabled in demo.
 3. You can create your own account in the **Admin Panel>Add user** page.
 
