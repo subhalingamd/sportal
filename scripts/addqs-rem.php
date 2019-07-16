@@ -9,6 +9,7 @@
 	}
 	
 	include "../db_connect.php";
+	$con=Connect();
 	if (!isset($_POST['aid']) or $_POST['aid']=='')
 		echo "<script>location.replace('../assg.php');</script>";
 	if ($_SESSION['user']['role']!='faculty')
@@ -21,7 +22,7 @@
 
 	if ($_POST['qid']!='')
 	{
-		$con=Connect();
+		
 		if (preg_match("/^[0-9]+$/",$_POST['aid']) and preg_match("/^[0-9]+$/",$_POST['qid']) and preg_match("/^[a-f0-9]+$/",$_POST['token'])){
 		$mark=mysqli_fetch_array(mysqli_query($con,"SELECT marks from questions where qid='".$_POST['qid']."' and aid='".$_POST['aid']."' and MD5(2*aid-1)='".$_POST['token']."'"),MYSQLI_NUM)[0];
 		mysqli_query($con,"DELETE FROM questions where qid='".$_POST['qid']."' and aid='".$_POST['aid']."' and MD5(2*aid-1)='".$_POST['token']."'");
@@ -29,9 +30,9 @@
 		mysqli_query($con,"UPDATE assignments set maxmarks=maxmarks-".floatval($mark)." where aid='".$_POST['aid']."'");
 		}
 
-		Close($con);
+		
 		$_POST['qid']='';
-	} ?>
+	} Close($con); ?>
 
 		<form id="remqs" action="../addqs.php" method="POST">
 		<input type="text" name="aid" value="<?php echo $_POST['aid']?>" readonly="true" hidden="true"><input type="text" name="aname" value="<?php echo $_POST['aname']?>" readonly="true" hidden="true">

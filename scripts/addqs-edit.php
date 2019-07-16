@@ -9,6 +9,8 @@
 	}
 	
 	include "../db_connect.php";
+		$con=Connect();
+
 	if (!isset($_POST['aid']) or $_POST['aid']=='')
 		echo "<script>location.replace('../assg.php');</script>";
 	if ($_SESSION['user']['role']!='faculty')
@@ -21,7 +23,6 @@
 
 	if ($_POST['qid']!='')
 	{
-		$con=Connect();
 		if (preg_match("/^[0-9]+$/",$_POST['aid']) and preg_match("/^[0-9]+$/",$_POST['qid']) and preg_match("/^[a-f0-9]+$/",$_POST['token'])){
 		$mark=mysqli_fetch_array(mysqli_query($con,"SELECT marks from questions where qid='".$_POST['qid']."' and aid='".$_POST['aid']."' and MD5(2*aid-1)='".$_POST['token']."'"),MYSQLI_NUM)[0];
 		$q=htmlspecialchars($_POST['q']);
@@ -31,7 +32,7 @@
 		$opt4=htmlspecialchars($_POST['opt4']);
 		
 		$stmt=mysqli_prepare($con,"UPDATE questions SET q=?,qtype=?,opt1=?,opt2=?,opt3=?,opt4=?,ans=?,relax=?,marks=?,pen=? where qid='".$_POST['qid']."' and aid='".$_POST['aid']."' and MD5(2*aid-1)='".$_POST['token']."'");
-		mysqli_stmt_bind_param($stmt,"ssssssssdd",$q,$_POST['qtype'],$opt1,$opt2,$opt3,$opt4,$_POST['ans'],$_POST['relax'],$_POST['marks'],$_POST['pen']);
+		mysqli_stmt_bind_param($stmt,"ssssssssss",$q,$_POST['qtype'],$opt1,$opt2,$opt3,$opt4,$_POST['ans'],$_POST['relax'],$_POST['marks'],$_POST['pen']);
 		mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
 		$mark=mysqli_prepare($con,"UPDATE assignments set maxmarks=(maxmarks-".floatval($mark)."+?) where aid='".$_POST['aid']."'");
@@ -39,9 +40,9 @@
 		mysqli_stmt_execute($mark);
 		mysqli_stmt_close($mark);
 		}
-		Close($con);
+		
 		$_POST['qid']='';
-	} ?>
+	} Close($con) ;?>
 
 		<form id="editqs" action="../addqs.php" method="POST">
 		<input type="text" name="aid" value="<?php echo $_POST['aid']?>" readonly="true" hidden="true"><input type="text" name="aname" value="<?php echo $_POST['aname']?>" readonly="true" hidden="true">

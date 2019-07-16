@@ -329,7 +329,7 @@
 
 					<div class="qtype scq mcq mat int num">
 						<input type="text" name="marks" pattern="[-+]?[0-9]*[.,]?[0-9]+" placeholder="Marks (for correct response)" required="true">
-						<input type="text" name="pen" pattern="[-+]?[0-9]*[.,]?[0-9]+" placeholder="Penalty (for incorrect response)">
+						<input type="text" name="pen" pattern="0|([-][0-9]*[.,]?[0-9]+)" placeholder="Penalty (for incorrect response)">
 					</div>
 
 					<div><input type="submit" value="Save"></div>
@@ -421,7 +421,7 @@
 
 					<div class="qtype scq mcq mat int num">
 						<input type="text" name="marks" pattern="[-+]?[0-9]*[.,]?[0-9]+" placeholder="Marks (for correct response)" required="true">
-						<input type="text" name="pen" pattern="[-+]?[0-9]*[.,]?[0-9]+" placeholder="Penalty (for incorrect response)">
+						<input type="text" name="pen" pattern="0|([-][0-9]*[.,]?[0-9]+)" placeholder="Penalty (for incorrect response)">
 					</div>
 
 					<div><input type="submit" value="Add"></div>
