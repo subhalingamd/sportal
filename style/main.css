@@ -183,6 +183,26 @@ div.tab::after{
 	clear: both;
 }
 
+.banner{
+	display: none;
+	background-color: #dddddd;
+	padding: 12px 6px;
+	font-size: 1.15em;
+	text-align: center;
+	font-family: "Open Sans Condensed";
+}
+
+.banner-close{
+	float: right; 
+	padding-right: 6px;
+	cursor: pointer;
+	color: #666;
+}
+
+.banner-close:hover{
+	color: #000;
+}
+
 .container{
 	padding: 6px;
 	margin-bottom: 2.5em;
@@ -401,9 +421,6 @@ tr:hover,tr:hover td.sticky{
 		left:0;
 	}
 
-	.msg-received, .msg-sent{
-		max-width: 100%;
-	}
 }
 
 @media screen and (max-width: 750px){

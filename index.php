@@ -29,6 +29,20 @@
 
 	</script>
 
+	<style type="text/css">
+		@media screen and (min-width: 750px){
+			table{
+				min-width: 50%;
+			}
+			th,td>a{
+						display: block;
+						text-decoration: none;
+						font-family: "Open Sans Condensed";
+						font-size: 1.2em;
+			}
+		}
+	</style>
+
 
 </head>
 <body>
@@ -58,7 +72,7 @@
 		<title>LOGIN</title>
 		<form class="login-content animate" method="POST" id="login-form">
 			<div class="box">
-				<div class="h">Login</div>
+				<div class="h open-sans">Login</div>
 				<div><label for="username"><div class="icon"><i class="fa fa-user"></i></div><input type="text" name="username" id="username" required="true" pattern="[a-zA-Z0-9]+" placeholder="Username"></label></div>
 				<div><label for="password"><div class="icon"><i class="fa fa-key"></i></div><input type="password" name="password" id="password" required="true" placeholder="Password"></label></div>
 				<font color="red"><i><span id="login-err"></span></i></font>
@@ -72,6 +86,11 @@
 	}
 	else {
 ?>
+	<script type="text/javascript">
+		$(function(){
+			$('.banner').slideDown("slow");
+		})
+	</script>
 		<title>HOME | <?php echo $_SESSION['user']['name']?></title>
 		<header>
 			<div id="toggle"><a onclick="$('ul.nav').slideToggle('slow');"><i class="material-icons" style="font-size:1.5em;color:#fff">menu</i></a></div>
@@ -91,21 +110,26 @@
 			</ul>
 		</header>
 
+		<div class="banner">
+			<i class="fas fa-exclamation-circle" style="color: #888"></i> An update to this page will be available in the next release
+			<span class="banner-close" onclick="$('.banner').slideUp();">&times</span>
+		</div>
+
 		<div class="container">
 			<?php  include "db_connect.php";
 					$con=Connect();
 			if ($_SESSION['user']['role']=='faculty'){ ?>
-				<table>
+				<table style="max-width: 50%">
 					<thead>
 						<tr>
-							<th>YOUR BATCHES ></th>
+							<th>YOUR BATCHES</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php $rol=mysqli_query($con,"SELECT role from rolefac where faculty='".$_SESSION['user']['username']."'");
 						while ($r=mysqli_fetch_array($rol,MYSQLI_NUM)){?>
 						<tr>
-							<td><a href="search.php?id=s<?php echo $r[0]?>&by=username"><?php echo $r[0]?></a></td>
+							<td><a href="search.php?id=s<?php echo $r[0]?>&by=username">> <?php echo $r[0]?></a></td>
 						</tr>
 						<?php } ?>
 					</tbody>
@@ -116,14 +140,22 @@
 			<?php }
 
 			if ($_SESSION['user']['role']=="admin") { ?>
+
+				<style>
+					tr{
+						border-bottom: none;
+					}
+					
+				</style>
+
 				<table>
 					<thead>
 						<tr>
-							<th>ADMIN PANEL ></th>
+							<th>ADMIN PANEL</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr><td><a href="admin/add.php">Add user</a></td></tr>
+						<tr><td><a href="admin/add.php">Add user</a></div></td></tr>
 						<tr><td><a href="admin/role.php">Batches Management</a></td></tr>
 						<tr><td><a href="admin/facrole.php">Faculty-in-Batches Management</a></td></tr>
 						<tr><td><a href="admin/rem.php">Remove user</a></td></tr>

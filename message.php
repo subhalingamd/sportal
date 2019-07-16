@@ -1,4 +1,4 @@
- <?php 
+<?php 
 	if(session_status()!=PHP_SESSION_ACTIVE) 
 		session_start();
 
@@ -67,6 +67,10 @@
 		setInterval(function(){ 
         $('#msg-box').load('message.php #msg-box');
 		}, 30000);
+
+		$(function(){
+			$('.banner').slideDown("slow");
+		})
 	</script>
 
 </head>
@@ -78,7 +82,7 @@
 				<div class="prof-name"><?php echo $_SESSION['user']['name']; ?></div>
 			</div>
 			<ul class="nav">
-				<li><a href="index.php" class="selected">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<li><a href="assg.php">Assignments</a></li>
 				<li><a href="message.php" class="selected">Messages</a></li>
 				<li><a href="news.php">Announcements</a></li>
@@ -88,6 +92,11 @@
 			</ul>
 		</header>
 
+		<div class="banner">
+			<i class="fas fa-exclamation-circle" style="color: #888"></i> An update to this page will be available in the next release
+			<span class="banner-close" onclick="$('.banner').slideUp();">&times</span>
+		</div>
+
 			<div class="container">
 
 			<span class="title">Messages</span>
@@ -95,13 +104,20 @@
 
 				<br><a class="btn" onclick="document.getElementById('msg').style.display='block'" style="width:auto;"><i class="fas fa-plus"></i>&nbspCOMPOSE</a><br><br>
 
-			<div id="msg-box">
+			<div id="msg-box" class="msg">
 
-			<?php while ($msg=mysqli_fetch_assoc($xyz)) {	?>
-			<div class="news">
-				<span class="news-from"><a href="search.php?id=<?php echo $msg['user1']; ?>&by=username"><?php echo $msg['user1']; ?></a> &nbsp~&nbsp (<a style="color: #aaaaaa;" href="search.php?id=<?php echo $msg['user2']; ?>&by=username"><?php echo $msg['user2']; ?></a>)</span>
-				<span class="news-time"><?php echo $msg['time']; ?></span>
-				<div class="news-desc"><?php echo nl2br($msg['msg']); ?></div>
+			<?php while ($msg=mysqli_fetch_assoc($xyz)) {
+				if ($msg['user1']==$_SESSION['user']['username']){ ?>
+				<div class="msg-sent" align="right">
+					<div class="msg-rec"><a href="search.php?id=<?php echo $msg['user2']; ?>&by=username"><?php echo $msg['user1']; ?></a></div>
+			<?php } else { ?>
+				<div class="msg-received">
+					<div class="msg-rec"><a href="search.php?id=<?php echo $msg['user1']; ?>&by=username"><?php echo $msg['user1']; ?></a></div>
+			<?php }	?>
+
+				 
+				<div class="msg-desc"><?php echo nl2br($msg['msg']); ?></div>
+				<div class="msg-time"><?php echo $msg['time']; ?></div>
 			</div>
 			<?php } 
 			Close($con);?>
