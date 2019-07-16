@@ -65,7 +65,7 @@ These are the special options for the Admin. Add/Remove users, batches, faculty 
 - mySQL
 
 ### Setting up
-Setting up is easy with our [setup.php](setup.php) file. Enter your DB details, server's timezone and Admin User details and you can start using the portal
+Setting up is easy with our [setup.php](setup.php) file. Enter your DB details, server's timezone and Admin User details and you can start using the portal.
 
 ## What's New
 - Added CSS to make everything look beautiful
@@ -78,12 +78,7 @@ Setting up is easy with our [setup.php](setup.php) file. Enter your DB details, 
 - Encryption of messages, questions, responses.
 
 ## Demo Instructions
-1. Login as admin using 
---- | ---
-Username | admin
---- | ---
-Password | admin
---- | ---
+1. Login as admin using 'admin' as username & password
 2. Have a look at admin features. Explore them! **You don't have the rights to update password and update contact details for this account**. Similarly, **removing users** is disabled in demo.
 3. You can create your own account in the **Admin Panel>Add user** page.
 
