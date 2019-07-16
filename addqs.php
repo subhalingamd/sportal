@@ -172,6 +172,18 @@
 </head>
 <body>
 
+	<?php if (!preg_match("/^[0-9]+$/", $_POST['aid'])){?>
+		<div class="popup" style="background-color: #aaaaaa; display: block;">
+			<div class="popup-content animate">
+				<div class="box">
+						<div class="h">Unknown Error</div>
+						<div>Snap!! There was an error and that's all we know. You can try again...</div>
+						<div><a class="btn" href="../assg.php">Go Back</a></div>
+				</div>
+			</div>
+		</div>
+	<?php die(); }
+
 	<?php if (!mysqli_fetch_array(mysqli_query($con,"SELECT info.username from info,assignments where assignments.aid='".$_POST['aid']."' and assignments.manager='".$_SESSION['user']['username']."' and assignments.manager=info.username and SYSDATE()<assignments.stime"))[0]){ ?>
 		<div class="popup" style="background-color: #aaaaaa; display: block;">
 			<div class="popup-content animate">

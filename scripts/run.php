@@ -47,7 +47,12 @@
 		<div class="popup-content animate">
 			<div class="box">
 				<?php if ($_SESSION['user']['role']!='faculty'){
-					if (!mysqli_fetch_array(mysqli_query($con,"SELECT info.username from info,assignments where assignments.aid='".$_POST['aid']."' and info.username='".$_SESSION['user']['username']."' and assignments.role='".$_SESSION['user']['role']."' and info.role=assignments.role and SYSDATE()>=assignments.stime and SYSDATE()<=assignments.etime"))[0]){?>
+					if (!preg_match("/^[0-9]+$/", $_POST['aid'])){?>
+						<div class="h">Unknown Error</div>
+						<div>Snap!! There was an error and that's all we know. You can try again...</div>
+						<div><a class="btn" href="../assg.php">Go Back</a></div>
+				    <?php }
+					elseif (!mysqli_fetch_array(mysqli_query($con,"SELECT info.username from info,assignments where assignments.aid='".$_POST['aid']."' and info.username='".$_SESSION['user']['username']."' and assignments.role='".$_SESSION['user']['role']."' and info.role=assignments.role and SYSDATE()>=assignments.stime and SYSDATE()<=assignments.etime"))[0]){?>
 						<div class="h">Unknown Error</div>
 						<div>Snap!! There was an error and that's all we know. You can try again...</div>
 						<div><a class="btn" href="../assg.php">Go Back</a></div>

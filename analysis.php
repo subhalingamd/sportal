@@ -75,7 +75,20 @@
 </head>
 <body>
 
-	<?php if (!mysqli_fetch_array(mysqli_query($con,"SELECT aid from assignments where aid='".$_POST['aid']."' and SYSDATE()>assignments.etime"))[0]){?>
+
+	<?php if (!preg_match("/^[0-9]+$/", $_POST['aid'])){?>
+		<div class="popup" style="background-color: #aaaaaa; display: block;">
+			<div class="popup-content animate">
+				<div class="box">
+						<div class="h">Unknown Error</div>
+						<div>Snap!! There was an error and that's all we know. You can try again...</div>
+						<div><a class="btn" href="../assg.php">Go Back</a></div>
+				</div>
+			</div>
+		</div>
+	<?php die(); }
+
+		 if (!mysqli_fetch_array(mysqli_query($con,"SELECT aid from assignments where aid='".$_POST['aid']."' and SYSDATE()>assignments.etime"))[0]){?>
 		<div class="popup" style="background-color: #aaaaaa; display: block;">
 			<div class="popup-content animate">
 				<div class="box">
