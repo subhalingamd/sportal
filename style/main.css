@@ -406,6 +406,13 @@ tr:hover,tr:hover td.sticky{
 	}
 }
 
+@media screen and (max-width: 750px){
+
+	.msg-received, .msg-sent{
+		max-width: 100%;
+	}
+}
+
 
 
 
