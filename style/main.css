@@ -304,7 +304,7 @@ tr:hover,tr:hover td.sticky{
 
 
 .news{
-	border: 1px solid #4444;
+	border: 1px solid #444;
 	box-shadow: 3px 3px 3px #dadada;
 	padding: 9px 6px;
 	color: #000000;
@@ -335,6 +335,56 @@ tr:hover,tr:hover td.sticky{
 	background-color: #f1f1f1;
 }
 
+.msg-received{
+	border: 1px solid #000;
+	border-radius: 12px;
+	padding: 9px 6px;
+	color: #000;
+	margin-bottom: 6px;
+	max-width: 75%;
+}
+
+
+.msg-sent{
+	border: 1px solid #aaa;
+	border-radius: 12px;
+	padding: 9px 6px;
+	background-color: #aaa; 
+	min-width: 0;
+	max-width: 75%;
+	margin: 3px 3px 5px auto;
+}
+
+
+.msg-rec a{
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #222222;
+	padding: 1px 3px;
+}
+
+ .msg-desc{
+	padding: 3px 6px;
+	color: #444444;
+	text-align: left;
+}
+
+.msg-time{
+	font-style: italic;
+	font-size: 0.75em;
+	color: #444;
+	text-align: right;
+	padding-right: 3px;;
+}
+
+.msg-received:hover{
+	background-color: #f1f1f1;
+}
+
+
+.msg-sent:hover{
+	background-color: #c1c1c1;
+}
 
 @media screen and (min-width: 950px){
 	th.sticky{
@@ -349,6 +399,10 @@ tr:hover,tr:hover td.sticky{
 		position: sticky;
 		position: -webkit-sticky;
 		left:0;
+	}
+
+	.msg-received, .msg-sent{
+		max-width: 100%;
 	}
 }
 

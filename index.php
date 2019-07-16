@@ -27,10 +27,21 @@
 			$('ul.nav').slideToggle("slow");
 		}
 
+	</script>
 
+
+</head>
+<body>
+
+<?php 
+	if ($_SESSION['user']==""){
+?>
+
+	<script type="text/javascript">
 		 $(function () {
 		    $('#login-form').on('submit', function(e) {
 		        e.preventDefault();
+		        $("#login-err").html("Validating...");
 		        $.ajax({
 		            url : "scripts/enter.php",
 		            type: "POST",
@@ -42,14 +53,6 @@
 		    });
 		});
 	</script>
-
-
-</head>
-<body>
-
-<?php 
-	if ($_SESSION['user']==""){
-?>
 
 	<div class="login">
 		<title>LOGIN</title>
