@@ -184,7 +184,7 @@
 		</div>
 	<?php die(); }
 
-	<?php if (!mysqli_fetch_array(mysqli_query($con,"SELECT info.username from info,assignments where assignments.aid='".$_POST['aid']."' and assignments.manager='".$_SESSION['user']['username']."' and assignments.manager=info.username and SYSDATE()<assignments.stime"))[0]){ ?>
+	 if (!mysqli_fetch_array(mysqli_query($con,"SELECT info.username from info,assignments where assignments.aid='".$_POST['aid']."' and assignments.manager='".$_SESSION['user']['username']."' and assignments.manager=info.username and SYSDATE()<assignments.stime"))[0]){ ?>
 		<div class="popup" style="background-color: #aaaaaa; display: block;">
 			<div class="popup-content animate">
 				<div class="box">
