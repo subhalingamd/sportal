@@ -44,7 +44,7 @@
 	$name['dob']=$temp['dob'];
 	$_SESSION['user']=$name;
 	$t=mysqli_query($con,"UPDATE info set active=SYSDATE() where username='".$_SESSION['user']['username']."'");
-	echo "<script>location.replace('index.php');</script>";
+	echo "Signing in...<script>location.replace('index.php');</script>";
 	}
 	}
 	Close($con);

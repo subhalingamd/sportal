@@ -34,13 +34,14 @@
 			table{
 				min-width: 50%;
 			}
+		}
 			th,td>a{
 						display: block;
 						text-decoration: none;
 						font-family: "Open Sans Condensed";
 						font-size: 1.2em;
 			}
-		}
+
 	</style>
 
 
