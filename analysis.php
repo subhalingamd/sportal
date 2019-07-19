@@ -138,7 +138,7 @@
 				style="width:auto;">Batch marks</a><br><br>
 
 
-
+	<div class="table">
 
 	<form action="scripts/keychg.php" method="POST">
 
@@ -275,6 +275,7 @@
 
 <label for="freeze-checkbox"><input type="checkbox" name="freeze" id="freeze-checkbox" value="1">&nbsp Finalise Answer Key (no further changes can be made)</label>
 <input type="submit" style="float: right; right: 12px; min-width: 0;">Submit Answer Key changes</a>
+</form>
 
 
 	<div class="popup" id="batch-marks-disable">
@@ -289,7 +290,7 @@
 
 
 <?php } else { ?>
-</form>
+
 
 	<div class="popup" id="batch-marks">
 		<div class="popup-content animate">
@@ -372,6 +373,7 @@
 	</tr>
 </table>
 	<?php } ?>
+</div>
 
 <!--------------------------------------------------------------------->
 <?php 
@@ -394,7 +396,7 @@
 	?>
 
 
-
+	<div class="table">
 	<table>
 		<thead>
 		<tr>
@@ -500,6 +502,7 @@
 </table>
 <br><br>
 <b>*</b> denotes 'BONUS' question; you will be awarded full marks for such questions.
+</div>
 
 <?php 
 }
