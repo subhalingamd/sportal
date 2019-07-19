@@ -138,9 +138,10 @@
 				style="width:auto;">Batch marks</a><br><br>
 
 
-	<div class="table">
 
 	<form action="scripts/keychg.php" method="POST">
+
+	<div class="table">
 
 	<input type="text" value="<?php echo $_POST['aid']?>" readonly="true" hidden="true" name="aid">
 	<table>
@@ -264,7 +265,9 @@
 
 		</tbody>
 		</table>
+	</div>
 		<br>
+
 
 
 <?php if (!$maxmark[1]) { ?>
@@ -373,7 +376,6 @@
 	</tr>
 </table>
 	<?php } ?>
-</div>
 
 <!--------------------------------------------------------------------->
 <?php 
@@ -482,6 +484,7 @@
 
 	</tbody>	
 </table>
+</div>
 <table>
 	<tr>
 		<td>Your Mark:</td>
@@ -502,7 +505,7 @@
 </table>
 <br><br>
 <b>*</b> denotes 'BONUS' question; you will be awarded full marks for such questions.
-</div>
+
 
 <?php 
 }
