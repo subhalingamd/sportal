@@ -109,7 +109,7 @@
 			<?php while ($msg=mysqli_fetch_assoc($xyz)) {
 				if ($msg['user1']==$_SESSION['user']['username']){ ?>
 				<div class="msg-sent" align="right">
-					<div class="msg-rec"><a href="search.php?id=<?php echo $msg['user2']; ?>&by=username"><?php echo $msg['user1']; ?></a></div>
+					<div class="msg-rec"><a href="search.php?id=<?php echo $msg['user2']; ?>&by=username"><?php echo $msg['user2']; ?></a></div>
 			<?php } else { ?>
 				<div class="msg-received">
 					<div class="msg-rec"><a href="search.php?id=<?php echo $msg['user1']; ?>&by=username"><?php echo $msg['user1']; ?></a></div>
