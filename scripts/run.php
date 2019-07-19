@@ -80,7 +80,7 @@
 						mysqli_query($con,"INSERT into timer (username,aid,token) values ('".$_SESSION['user']['username']."','".$_POST['aid']."',MD5(CONCAT(SYSDATE(),'".$_POST['aid']."','".$_POST['key']."')))");}
 						$token=mysqli_fetch_array(mysqli_query($con,"SELECT token from timer where aid='".$_POST['aid']."' and username='".$_SESSION['user']['username']."'"),MYSQLI_NUM)[0]; ?>
 				<div class="h">Get Ready</div>
-				<div><b>You are one step behind from starting your assignment.</b> <br>By clicking Start, your session will start and the timer will be set in the server. Kindly note that your timer won't be stopped for any reasons that are within your control, even if this window is closed. If you face any technical issues, inform an invigilator immediately. Note the Admin can decide to change the timer in the server, if required-so don't panic!. All the best!</div>
+				<div><b>You are one step away from starting your assignment.</b> <br>By clicking Start, your session will start and the timer will be set in the server. Kindly note that your timer won't be stopped for any reasons that are within your control, even if this window is closed. If you face any technical issues, inform an invigilator immediately. Note the Admin can decide to change the timer in the server, if required-so don't panic!. All the best!</div>
 				<form action="../run.php" method="POST" id="ready">
 					<input type="text" hidden="true" readonly="true" name="aid" value="<?php echo $_POST['aid'];?>"><input type="text" hidden="true" readonly="true" name="aname" value="<?php echo $_POST['aname'];?>"><input type="text" hidden="true" readonly="true" name="token" value="<?php echo $token ?>">
 					<div><a class="btn" onclick="$('#ready').submit()">Start</a>
