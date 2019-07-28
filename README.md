@@ -80,6 +80,8 @@ Setting up is easy with our [setup.php](setup.php) file. Enter your DB details, 
 ## Demo Instructions
 1. Login as admin using ***admin*** as username & password
 2. Have a look at admin features. Explore them! **You don't have the rights to update password and update contact details for this account**. Similarly, **removing users** or **reseting password for other users** is disabled in demo. Also note that demo version may be slighlty different from the original version.
-3. You can create your own account in the **Admin Panel>Add user** page.
+3. You can create your own account in the **Admin Panel>Add user** page.(Find your username from *Find User* page and use your DOB as password for logging in)
 
 #### Do not forget to take up an assignment as a student!
+
+***For any queries contact me at [subhalingam.d@gmail.com]***
