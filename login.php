@@ -2,7 +2,7 @@
 	if(session_status()!=PHP_SESSION_ACTIVE) 
 		session_start();
 
-	if ($_REQUEST['next']=='' or substr($_REQUEST['next'],-4)!='.php' or !preg_match('/^[a-z]+.php$/',$_REQUEST['next']))
+	if (!in_array($_REQUEST['next'], ['assg.php','message.php','news.php','search.php','profile.php']))
 			$_REQUEST['next']='index.php';
 
 	if (isset($_SESSION['user']) and $_SESSION['user']!=""){
