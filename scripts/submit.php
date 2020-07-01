@@ -6,7 +6,7 @@
 			if (!(isset($_POST['username']) and isset($_POST['aid']) and $_POST['username']!='')){
 				session_unset();
 				session_destroy();
-				echo "<script>location.replace('../index.php');</script>";
+				echo "<script>location.replace('../login.php');</script>";
 			}
 		}
 

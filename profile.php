@@ -5,7 +5,7 @@
 		if (!isset($_SESSION['user']) or $_SESSION['user']==""){
 		session_unset();
 		session_destroy();
-		echo "<script>location.replace('index.php');</script>";
+		echo "<script>location.replace('login.php?next=profile.php');</script>";
 	}
 ?>
 
