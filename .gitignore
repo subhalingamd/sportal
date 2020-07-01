@@ -11,3 +11,5 @@ db_connect.php
 prof-pic/*
 # do not ignore default.png in prof-pic
 !prof-pic/default.png
+
+/vendor/
