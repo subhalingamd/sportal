@@ -5,14 +5,14 @@
 		if (!isset($_SESSION['user']) or $_SESSION['user']==""){
 		session_unset();
 		session_destroy();
-		echo "<script>location.replace('../index.php');</script>";
+		echo "<script>location.replace('../login.php');</script>";
 	}
 
 
 	include "../db_connect.php";
 
 	if ($_SESSION['user']['role']!='admin')
-		echo "<script>location.replace('../index.php');</script>";
+		echo "<script>location.replace('../assg.php');</script>";
 
 	if (preg_match("/^[A-Za-z0-9]+$/",$_POST['manager'])){
 
