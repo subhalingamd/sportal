@@ -5,25 +5,14 @@
 	if (!isset($_POST['username']) or $_POST['username']==''){
 		session_unset();
 		session_destroy();
-		echo "<script>location.replace('../index.php');</script>";
+		echo "<script>location.replace('../login.php');</script>";
 	}
 
-?>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Logging in...</title>
-</head>
-<body>
-
-<?php
 	include "../db_connect.php";
 	$con=Connect();
 
 	if (!preg_match('/^[a-zA-Z0-9]+$/',$_POST['username'])){
-		echo "Invalid username/password";
+		echo "deny";
 	}
 	
 	else{
@@ -33,7 +22,7 @@
 	$name=mysqli_fetch_assoc($res);
 	if (!isset($name['adm_no']))
 		{
-			echo "Invalid username/password";
+			echo "deny";
 
 		}		
 	else {	
@@ -44,12 +33,9 @@
 	$name['dob']=$temp['dob'];
 	$_SESSION['user']=$name;
 	$t=mysqli_query($con,"UPDATE info set active=SYSDATE() where username='".$_SESSION['user']['username']."'");
-	echo "Signing in...<script>location.replace('index.php');</script>";
+	echo "ok";
 	}
 	}
 	Close($con);
 	
 ?>
-
-</body>
-</html>

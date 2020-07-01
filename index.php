@@ -1,13 +1,20 @@
 <?php 
 	if(session_status()!=PHP_SESSION_ACTIVE) 
 		session_start();
+
+		if (!isset($_SESSION['user']) or $_SESSION['user']==""){
+		session_unset();
+		session_destroy();
+		echo "<script>location.replace('login.php');</script>";
+	}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+	<title>HOME | <?php echo $_SESSION['user']['name']?></title>
+
 	<link rel="stylesheet" type="text/css" href="style/main.css">
-	<link rel="stylesheet" type="text/css" href="style/login.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- IMPORT FONTS -->
@@ -48,51 +55,13 @@
 </head>
 <body>
 
-<?php 
-	if ($_SESSION['user']==""){
-?>
 
-	<script type="text/javascript">
-		 $(function () {
-		    $('#login-form').on('submit', function(e) {
-		        e.preventDefault();
-		        $("#login-err").html("Validating...");
-		        $.ajax({
-		            url : "scripts/enter.php",
-		            type: "POST",
-		            data: $(this).serialize(),
-		            success: function (data) {
-		                $("#login-err").html(data);
-		            }
-		            });
-		    });
-		});
-	</script>
-
-	<div class="login">
-		<title>LOGIN</title>
-		<form class="login-content animate" method="POST" id="login-form">
-			<div class="box">
-				<div class="h open-sans">Login</div>
-				<div><label for="username"><div class="icon"><i class="fa fa-user"></i></div><input type="text" name="username" id="username" required="true" pattern="[a-zA-Z0-9]+" placeholder="Username"></label></div>
-				<div><label for="password"><div class="icon"><i class="fa fa-key"></i></div><input type="password" name="password" id="password" required="true" placeholder="Password"></label></div>
-				<font color="red"><i><span id="login-err"></span></i></font>
-				<div><input type="submit" value="Login >"></div>
-			</div>
-			<font color="grey">(Use your DOB in YYYY-MM-DD format as your password for the first time login)</font>
-		</form>
-	</div>
-
-<?php 
-	}
-	else {
-?>
 	<script type="text/javascript">
 		$(function(){
 			$('.banner').slideDown("slow");
 		})
 	</script>
-		<title>HOME | <?php echo $_SESSION['user']['name']?></title>
+
 		<header>
 			<div id="toggle"><a onclick="$('ul.nav').slideToggle('slow');"><i class="material-icons" style="font-size:1.5em;color:#fff">menu</i></a></div>
 			<div class="profile">
@@ -170,9 +139,6 @@
 			<div class="copy">&copy All Rights Reserved</div>
 			<div class="last-login"><?php echo "Last Logout: ".$_SESSION['user']['active'];?></div>
 		</footer>
-
-	<?php } ?>
-
 
 </body>
 </html>
