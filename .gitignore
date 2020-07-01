@@ -1,0 +1,15 @@
+# General files
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
+
+# Specific files
+clock.php
+db_connect.php
+prof-pic/*
+# do not ignore default.png in prof-pic
+!prof-pic/default.png
+
+/vendor/

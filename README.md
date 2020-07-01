@@ -1,4 +1,6 @@
 # Student Portal
+![PHP Composer](https://github.com/subhalingamd/sportal/workflows/PHP%20Composer/badge.svg)
+
 (A Student Portal made using HTML, CSS, PHP, mySQL, JavaScript)
 
 A simplified Student Portal featuring Online Assignments (setting up, taking up and analysis), Messaging, Finding users, adding Announcements and lot more. Before setting it up for yourself, enjoy a **live demo** by [clicking here](http://projects.subhalingam.heliohost.org/sportal/) after reading [this](#demo-instructions)

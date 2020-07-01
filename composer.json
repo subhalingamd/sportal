@@ -1,0 +1,13 @@
+{
+    "name": "subhalingamd/sportal",
+    "description": "A simple Student Portal for taking up online assignments and lot more",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Subhalingam D",
+            "email": "subhalingam.d@gmail.com"
+        }
+    ],
+    "require": {}
+}
