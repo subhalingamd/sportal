@@ -1,9 +1,10 @@
 # Student Portal
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![PHP Composer](https://github.com/subhalingamd/sportal/workflows/PHP%20Composer/badge.svg)
 
-(A Student Portal made using HTML, CSS, PHP, mySQL, JavaScript)
+(A Student Portal made using PHP with MySQL)
 
-A simplified Student Portal featuring Online Assignments (setting up, taking up and analysis), Messaging, Finding users, adding Announcements and lot more. Before setting it up for yourself, enjoy a **live demo** by [clicking here](http://projects.subhalingam.heliohost.org/sportal/) after reading [this](#demo-instructions)
+A light-weight Student Portal featuring Online Assignments (setting up, taking up and analysis), Messaging, Finding users, adding Announcements and lot more. Before setting it up for yourself, enjoy a **live demo** by [clicking here](http://projects.subhalingam.heliohost.org/sportal/) after reading [this](#demo-instructions)
 
 ## Features
 ### Roles
@@ -27,7 +28,7 @@ This is the highlight of this project! All the three groups have some role to pl
 			<li>Request Assignment for one of his batch (one at a time)</li>
 			<li>Add, modify and delete Questions</li>
 			<li>Submit (answer) key changes after the end-time</li>
-			<li>Analyse (in detail) the performance of the batch
+			<li>Analyse (in detail) the performance of the batch</li>
 		</ul>
 		<b>Note:</b> Batch marks will be available only after finalising/freezing the answer key after the end-time
 		<i>It is recommended to upload the correct answers after the end-time</i>
@@ -43,7 +44,7 @@ This is the highlight of this project! All the three groups have some role to pl
 	</p>
 </details>
 
-For now, questions can be of Single Correct, One or More than one correct, Matrix matching, Single-digit Integer or Numerical type. The Numerical type answers can also support a range of answers, if required.
+For now, questions can be of **Single Correct**, **One or More than one correct**, **Matrix matching**, **Single-digit Integer** or **Numerical type**. The Numerical type answers can also support a range of answers, if required.
 
 ### Messaging
 Make friends, interact with your faculties and get your doubts cleared! Its a nice place for some fun too, but beaware that the messages aren't encrypted and can be seen by the Admin at any time!
@@ -62,28 +63,31 @@ These are the special options for the Admin. Add/Remove users, batches, faculty 
 
 ## Installation
 ### Requirements
-- Web Server
-- PHP 7.1 *(recommended)*
-- mySQL
+- Web Server *(e.g. Apache)*
+- PHP >= 7.1 *(recommended)*
+- MySQL
 
 ### Setting up
-Setting up is easy with our [setup.php](setup.php) file. Enter your DB details, server's timezone and Admin User details and you can start using the portal.
+Setting up is easy with [setup.php](setup.php) file. Enter the DB details, server's timezone and Admin User details and everything is set automatically using the scripts.
 
 ## What's New
-- Added CSS to make everything look beautiful
-- Fixed few security issues
+- Feature a seperate Login page
+- Redirect back to the page (or it's parent) which redirected to login page for authentication
 - Minor performance improvements
+- Fixed few security issues
 
 ## What's Next
 - Redesigning Home and Messages page
 - A timetable and attendance system to look at upcoming classes and mark attendance online
-- Encryption of messages, questions, responses.
+- Option to establish an active connection with server to store answers at regular time stamps during the assessment
 
 ## Demo Instructions
-1. Login as admin using ***admin*** as username & password
-2. Have a look at admin features. Explore them! **You don't have the rights to update password and update contact details for this account**. Similarly, **removing users** or **reseting password for other users** is disabled in demo. Also note that demo version may be slighlty different from the original version.
-3. You can create your own account in the **Admin Panel>Add user** page.(Find your username from *Find User* page and use your DOB as password for logging in)
+1. You need to create your own account to access all features in the portal. Since this site does **not** allow self-registration (i.e., only admin can add users), you need to login to **admin** account first and then create your account in the admin panel.
+2. Use username and password *(both)* as `admin` to login as admin. You can explore all the admin features that are available. However, to avoid misuse of the demo version of the portal, **you won't have the rights to update password and update contact details for this account**. Similarly, **removing users** or **reseting password for other users** are also disabled in demo. Also note that demo version may be slighlty different from the original version.
+3. You can create your own account in the **Admin Panel>Add user** page. You should find your username from *Find User* page and use your DOB as password for logging in for the first time.
+
+*You are now one step away from landing up in the demo!* **Go to live demo by [clicking here](http://projects.subhalingam.heliohost.org/sportal/).**
 
 #### Do not forget to take up an assignment as a student!
 
-***For any queries contact me at [subhalingam.d@gmail.com]***
+***For any queries contact Subhalingam at [subhalingam.d@gmail.com]***
